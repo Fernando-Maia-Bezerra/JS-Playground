@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soundalize - O melhor reprodutor de música</title>
+    <script src="https://kit.fontawesome.com/0a837a1881.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <div class="selectContainer">
+            <input type="file" id="file-selector-button" title="Selecione uma pasta de músicas" webkitdirectory multiple>
+        </div>
+        <label id="song-title" for="song-track">Escolha uma pasta de músicas</label>
+        <div class="range">
+            <input title="song-track" type="range" name="song-track" id="song-track" min="0" max="100" value="0">
+        </div>
+        <div class="actions">
+            <button id="previous" title="Previous"><i class="previous fa-solid fa-backward-step"></i></button>
+            <button id="play-pause" title="Play / Pause"> <i class="play fa-solid fa-play"></i></button>
+            <button id="next" title="Next"><i class="Next fa-solid fa-forward-step"></i></button>
+        </div>
+    </main>
+
+    <script src="javaScript.js"></script>
+</body>
+</html>
