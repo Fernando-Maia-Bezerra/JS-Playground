@@ -5,6 +5,7 @@ const DOMElements = {
     previousButton: document.getElementById("previous"),
     playPauseButton: document.getElementById("play-pause"),
     nextButton: document.getElementById("next"),
+    volumeInput: document.getElementById("volume-range")
 }
 
 const audio = new Audio()
@@ -14,6 +15,7 @@ let isPlaying = false
 
 function selectFolder(event) {
     const files = event.target.files
+    if (!files.length) return
     playlist.length = 0
     currentSongIndex = 0
     isPlaying = false
@@ -98,14 +100,20 @@ function updateProgress() {
     }
 }
 
+function changeVolume() {
+    audio.volume = DOMElements.volumeInput.value / 100
+}
+
 DOMElements.fileSelector.addEventListener("change", selectFolder)
 DOMElements.playPauseButton.addEventListener("click", playPauseButtonHandler)
 DOMElements.nextButton.addEventListener("click", nextButtonHandler)
 DOMElements.previousButton.addEventListener("click", previousButtonHandler)
 DOMElements.songTrack.addEventListener("input", songTrackInputHandler)
+DOMElements.volumeInput.addEventListener("input", changeVolume)
 
 audio.addEventListener("ended", songEndedHandler)
 audio.addEventListener("timeupdate", updateProgress)
 audio.addEventListener("loadedmetadata", () => {
     DOMElements.songTrack.max = audio.duration
 })
+

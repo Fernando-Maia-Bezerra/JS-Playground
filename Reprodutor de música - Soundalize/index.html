@@ -9,8 +9,16 @@
 </head>
 <body>
     <main>
-        <div class="selectContainer">
-            <input type="file" id="file-selector-button" title="Selecione uma pasta de músicas" webkitdirectory multiple>
+        <div class="topActions">
+            <div class="selectContainer">
+                <input type="file" id="file-selector-button" title="Selecione uma pasta de músicas" webkitdirectory multiple>
+            </div>
+            <div class="openVolumeControl">
+                <i class="fa-solid fa-volume-high"></i>
+                <div class="volumeControl">
+                    <input title="volume" type="range" name="volume-range" id="volume-range" min="0" max="100" value="50">
+                </div>
+            </div>
         </div>
         <label id="song-title" for="song-track">Escolha uma pasta de músicas</label>
         <div class="range">

@@ -23,9 +23,7 @@ main {
 }
 
 .selectContainer {
-    width: 100%;
     display: flex;
-    margin-bottom: 20px;
 }
 
 #file-selector-button {
@@ -57,6 +55,66 @@ main {
     cursor: pointer;
     background-color: #e1e1e1;
     transition: all 300ms ease;
+}
+
+.topActions {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: start;
+    margin-bottom: 20px;
+}
+
+.openVolumeControl {
+    display: flex;
+    flex-direction: column;
+    height: max-content;
+    margin-top: 15px;
+    padding: 0 10px 20px 10px;
+}
+
+.openVolumeControl i {
+    font-size: 24px;
+    color: #fafafa;
+}
+
+.openVolumeControl:hover .volumeControl {
+    display: flex;
+}
+
+.volumeControl {
+    display: none;
+    position: absolute;
+    margin-left: 35px;
+    flex-direction: column;
+    width: fit-content;
+    height: fit-content;
+    padding: 5px;
+    background-color: #3a3a3a;
+    border-radius: 10px;
+}
+.volumeControl input {
+    writing-mode:vertical-lr;
+    direction: rtl;
+    width: 8px;
+    height: 100px;
+}
+
+.volumeControl input::-webkit-slider-runnable-track {
+    border-radius: 10px;
+}
+
+.volumeControl input::-webkit-slider-thumb:hover {
+    cursor: pointer;
+}
+
+.volumeControl input::-webkit-slider-thumb {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    background-color: #a64df9;
+    border-radius: 50%;
 }
 
 
